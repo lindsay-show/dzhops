@@ -18,7 +18,7 @@ class DataCenter(models.Model):
     def __unicode__(self):
         return u'%s %s' %(self.dcen, self.dccn)
 
-class NetworkOperator(models.Model):
+'''class NetworkOperator(models.Model):
     noen = models.CharField(max_length=30, blank=True, verbose_name=u'运营商简称')
     nocn = models.CharField(max_length=30, blank=True, verbose_name=u'运营商全称')
 
@@ -30,8 +30,7 @@ class ProvinceArea(models.Model):
     pacn = models.CharField(max_length=30, blank=True, verbose_name=u'省份地区全称')
 
     def __unicode__(self):
-        return u'%s %s' %(self.paen, self.pacn)
-
+        return u'%s %s' %(self.paen, self.pacn)'''
 class Catagory(models.Model):
     catagoryen = models.CharField(max_length=30, blank=True, verbose_name=u'类别简称')
     catagorycn = models.CharField(max_length=30, blank=True, verbose_name=u'类别全称')

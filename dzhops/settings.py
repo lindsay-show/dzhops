@@ -69,11 +69,11 @@ WSGI_APPLICATION = 'dzhops.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dzhops',
-        'USER': 'dzhops',
-        'PORT': 33066,
-        'HOST': '10.15.201.102',
-        'PASSWORD': 'dzhinternet',
+        'NAME': 'cmccops',
+        'USER': 'root',
+        'PORT': 3306,
+        'HOST': 'localhost',
+        'PASSWORD': 'admin',
     }
 }
 
@@ -118,9 +118,9 @@ TEMPLATE_DIRS = (
 
 # salt-api setting
 SALT_API = {
-    'url': 'http://10.15.201.102:18000/',
-    'user': 'zhaogb',
-    'password': 'dzhinternet'
+    'url': 'http://localhost:18000/',
+    'user': 'xiaomeng',
+    'password': 'xiaomeng'
 }
 
 # log setting
