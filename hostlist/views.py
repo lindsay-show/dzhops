@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from hostlist.models import Dzhuser, DataCenter, HostList
+from hostlist.models import CmccUser, DataCenter, HostList
 
 import json, logging
 
@@ -27,7 +27,7 @@ def assetList(request):
     dc = DataCenter.objects.all()
     for i in dc:
         dc_dict[i.dcen] = i.dccn
-    eg = Dzhuser.objects.all()
+    eg = CmccUser.objects.all()
     for j in eg:
         engi_dict[j.username] = j.engineer
     db_result = HostList.objects.all()
@@ -68,13 +68,13 @@ def assetListAPI(request):
         if dc == 'All_DC' and eg == 'ALL_ENGI':
             result = HostList.objects.all()
         elif dc == 'All_DC' and eg != 'ALL_ENGI':
-            eg_result = Dzhuser.objects.get(username=eg)
+            eg_result = CmccUser.objects.get(username=eg)
             result = HostList.objects.filter(engineer=eg_result.engineer)
         elif dc != 'All_DC' and eg == 'ALL_ENGI':
             dc_result = DataCenter.objects.get(dcen=dc)
             result = HostList.objects.filter(dccn=dc_result.dccn)
         elif dc != 'All_DC' and eg != 'ALL_ENGI':
-            eg_result = Dzhuser.objects.get(username=eg)
+            eg_result = CmccUser.objects.get(username=eg)
             dc_result = DataCenter.objects.get(dcen=dc)
             result = HostList.objects.filter(dccn=dc_result.dccn, engineer=eg_result.engineer)
         else:

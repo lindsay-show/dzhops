@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from hostlist.models import HostList, Dzhuser
+from hostlist.models import HostList, CmccUser
 import logging
 
 log = logging.getLogger('dzhops')

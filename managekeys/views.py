@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 
-from hostlist.models import HostList, DataCenter, Dzhuser
+from hostlist.models import HostList, DataCenter, CmccUser
 from saltstack.saltapi import SaltAPI
 from managekeys.utils import clearUpMinionKyes
 
