@@ -10,7 +10,7 @@ from index.models import MiniKeys, ProcStatus, ServStatus
 from index.forms import ChangePasswordForms, UploadFileForm
 from record.models import OperateRecord
 # import system libs
-import Image
+import image
 import os
 import shutil
 import logging
